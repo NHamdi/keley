@@ -33,6 +33,8 @@ gem 'foundation-rails'
 gem 'selenium-webdriver'
 gem 'database_cleaner', '~> 1.2.0'
 
+## data to seed
+gem 'seed_dump'
 
 #
 gem 'haml'
