@@ -1,0 +1,17 @@
+
+%h2.product_title
+  = @category.name
+%p.product_sub_title
+  = @category.description
+
+#category_wrapper
+  =# render @category.products
+  #form
+    =# render "products/form"
+
+.links
+  = link_to 'Edit', edit_category_path(@category)
+  |
+  = link_to 'Delte', categories_path(@category), method: :delete, data: {confirm: "Are you sure?"}
+  |
+  = link_to 'Back', categories_path

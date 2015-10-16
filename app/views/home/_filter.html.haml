@@ -1,0 +1,28 @@
+.row
+  = form_for(@filter, url: filter_product_home_index_path, :remote => true) do |f|
+    .large-6.columns
+      .row
+        .large-4.columns
+          %h5 Filter
+          .small-4.row
+            = f.collection_check_boxes(:tags, @tags, :id, :name ) do |cb|
+              = cb.check_box
+              = cb.label
+              %br
+
+        .large-4.columns
+          %h5 Order by
+          .small-4.row
+            = f.radio_button :order, 'price'
+            = f.label "Price"
+          .small-4.row
+            = f.radio_button :order, 'weight'
+            = f.label "Weigh"
+      .row.go
+        = f.submit "GO"
+
+    .large-6.columns
+      .small-8.columns
+        = f.text_field :key_search, :class=>"autocomplete"
+      .row.search
+        = f.submit "Search"

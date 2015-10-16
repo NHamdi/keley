@@ -1,0 +1,12 @@
+
+- @categories.each do |category|
+  .index_row.clearfix
+    %h2.todo_list_title
+      = link_to category.name, category_path(category)
+    %p.todo_list_sub_title
+      = category.description
+    %p
+      = link_to "Products", category_products_path(category.id)
+.links
+
+  = link_to "New Category", new_category_path()

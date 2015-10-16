@@ -1,0 +1,22 @@
+.product_content
+  - @products.each do |product|
+    .panel.callout
+      .row
+        .large-2.columns.small-3
+          %img{:src => "http://placehold.it/80x80&text=[img]"}/
+        .large-8.columns
+          .row
+            %h2.product_title
+              %h3
+                = product.name
+          .row
+            %h5.subheader
+              = product.price
+              Euros
+              |
+              = product.weight
+              Kg
+          .row
+            = product.tags_name
+        .large-2.columns.small-3
+          = link_to "More details", product
